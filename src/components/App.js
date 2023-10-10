@@ -3,6 +3,7 @@ import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
 
 function App() {
+  const [search, setSearch] = useState('')
   const [lis,setLis]=useState('http://localhost:6001/listings/')
   const list = 'http://localhost:6001/listings'
   const [idata,setData]=useState([])
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header search={search} setSearch={setSearch}/>
       <ListingsContainer idata={idata} lis={lis} setLis={setLis}/>
     </div>
   );
